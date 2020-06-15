@@ -5,7 +5,6 @@ from urllib3 import PoolManager
 
 
 def check_google_search_results(query: str, number_of_results: int) -> list:
-    number_of_results -= 1
     search_results_urls = [
         search_result
         for search_result in search(
@@ -23,3 +22,6 @@ def check_url_status(url: str):
     http = PoolManager()
     request = http.request("GET", url)
     return request.status
+
+
+print(check_google_search_results("Harry Potter", 10))
