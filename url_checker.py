@@ -22,6 +22,3 @@ def check_url_status(url: str):
     http = PoolManager()
     request = http.request("GET", url)
     return request.status
-
-
-print(check_google_search_results("Harry Potter", 10))
